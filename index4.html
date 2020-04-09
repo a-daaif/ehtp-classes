@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <script>
+      // function Person(name){
+      //     this.name = name
+      // }
+
+      // Person.prototype.sayHello = function(){
+      //     console.log('Hello ' + this.name);
+      // }
+
+      // var p1 = new Person('toto')
+      // var p2 = new Person('fifi')
+
+      class Person {
+        #name = "";
+        #age = 0;
+        constructor(name) {
+          this.#name = name;
+        }
+        get age() {
+            return this.#age
+        }
+        set age(a){
+            if(a < 0 || a > 125) return
+            this.#age = a
+        }
+        sayHello() {
+          console.log(this.#name);
+        }
+        getName(){
+            return this.#name.toUpperCase()
+        }
+        setName(name){
+         this.#name = name
+        }
+      }
+      class Employe extends Person {
+        constructor(name, id) {
+          super(name);
+          this.id = id;
+        }
+        sayHello() {
+          console.log(this.name, " ayant l'id : " + this.id);
+        }
+        
+      }
+      var e1 = new Employe("toto", 67);
+      var e2 = new Employe("fifi", 90);
+      console.log(e1, e2);
+    </script>
+  </body>
+</html>

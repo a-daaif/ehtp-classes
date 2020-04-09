@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Afficher une Facture -->
+        <!-- Utiliser bootstrap et font awesome dans la vue -->
+        <table>
+            <thead>
+                <th>REF</th>
+                <th>PRICE</th>
+                <th>COUNT</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>36.89</td>
+                    <td>6</td>
+                    <td>Bouton supprimer un item</td>
+                    <td>Bouton modifier un item</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        class Facture{
+            items = []
+            // Ajoute une entré à la facture
+            add(item){}
+            // Supprime une entrée de la facture
+            remove(ref){}
+            // Afficher tous les éléments de la facture dans la console
+            list(){}
+            // Retourne tous les items
+            getItems(){}
+            // Retoure le prix le plus cher
+            getMaxPrice(){}
+            // Trier par rapport au prix
+            sortByPrice(){}
+            // Trier par rapport à la quantité
+            sortByCount(){}
+            // Nombre d'entrées dans la facture
+            getCount(){}
+        }
+        class Item{
+            constructor(ref, price, count){
+
+            }
+        }
+        // Responsable de l'affichage de la facture
+        class View {
+            facture = new Facture()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+    <style>
+      td {
+        background-color: red;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      const container = document.querySelector(".container");
+    //   container.innerHTML = createTable(10, 10);
+    const tab = createTable(10, 10)
+       container.appendChild(tab[0])
+
+    //   function createTable(l, c) {
+    //     var table =
+    //       "<table border='1'  cellpadding='8' cellspacing='6'>";
+    //     for (var i = 0; i < l; i++) {
+    //       table += "\n\t<tr>";
+    //       for (j = 0; j < c; j++) {
+    //         table += "\n\t\t<td></td>";
+    //       }
+    //       table += "\n\t</tr>";
+    //     }
+    //     table += "\n</table>";
+    //     return table;
+    //   }
+
+    function createTable(l, c) {
+        const table = document.createElement('table')
+        table.setAttribute('cellpadding', '10')
+        table.setAttribute('cellspacing', '6')
+        table.setAttribute('border', '1')
+        const cells = []
+        for(var i=0; i<l; i++) {
+            const tr = document.createElement('tr')
+            cells[i] = []
+            for(var j=0; j<c; j++){
+                const td = document.createElement('td');
+                cells[i][j] = td
+                const txt1 = document.createTextNode('X');
+                const txt2 = document.createTextNode('Y');
+                td.appendChild(txt1)
+                td.appendChild(txt2)
+                td.appendChild(txt1)
+                // console.log(td.childNodes)
+                tr.appendChild(td)
+            }
+            table.appendChild(tr)
+        }
+        return [table, cells]
+    }
+      const table = container.querySelector('table');
+      table.addEventListener('click', f)
+      table.addEventListener('click', g)
+      function f(evt) {
+        console.log("f est appelée.", evt);
+        if (evt.target.tagName === "TD") {
+          evt.target.style.backgroundColor = "green";
+        } else {
+          evt.target.style.backgroundColor = "yellow";
+          table.removeEventListener('click', f)
+        table.addEventListener('mouseenter', f)
+
+        }
+      }
+      function g(){
+        console.log('G called');
+      }
+    </script>
+  </body>
+</html>

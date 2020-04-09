@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau</title>
+</head>
+<body>
+   
+    <script>
+        const tab = [1, 5, 9, 10, -78];
+        const facture = [
+            {ref: 1, prix: 34.87, qte: 4},
+            {ref: 2, prix: 3.87, qte: 5},
+            {ref: 3, prix: 32.7, qte: 9},
+            {ref: 4, prix: 89.00, qte: 7},
+            {ref: 5, prix: 100, qte: 40},
+        ]
+
+        // const f = function (e, i, t){
+        //     console.log('f est appelée.', e, i, t)
+        // }
+        
+        // const f = (e, i, t) => console.log('f appelée ', e, i, t)
+        // tab.forEach((e, i, t) => console.log(e, i, t))
+        const tab1 = tab.map(e => e * e)
+
+        const sousTotaux = facture.map(item => item.prix * item.qte)
+        const total = sousTotaux.reduce((acc, e) => acc += e, 0)
+    </script>
+</body>
+</html>

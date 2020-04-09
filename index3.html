@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objets</title>
+</head>
+<body>
+   <script>
+       const facture = {
+           checkout: false,
+           _name: 'X',
+           items: [],
+           add(ref, prix, qte){
+                this.items.push({ref, prix, qte})
+           },
+           count(){
+               return this.items.length
+           },
+           remove(r){
+               this.items = this.items.filter(item => item.ref !== r)
+           },
+           set name(n) {
+              this._name = n.toLowerCase() 
+           },
+           get name(){
+               return this._name;
+           }
+       }
+       
+   </script> 
+</body>
+</html>
